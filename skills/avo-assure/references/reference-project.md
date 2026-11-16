@@ -15,7 +15,7 @@ Common/Login_StandardUser: @Browser Open Browser | @Browser Navigate to URL http
 ## Test cases
 - Login/TC_Login_001_ValidLogin: one group = reused Login_StandardUser.
 - Login/TC_Login_002_DataDrivenLogin: group Login_DataDriven
-  1 @Generic Get Param `C:\AvoData\SauceDemo\Login.xlsx;Login`
+  1 @Generic Get Param `avoassure/Login/DT_Login_Users` (picked with the data table icon)
   2 @Generic Start Loop
   3 @Browser Open Browser
   4 @Browser Navigate to URL https://www.saucedemo.com/
@@ -25,8 +25,11 @@ Common/Login_StandardUser: @Browser Open Browser | @Browser Navigate to URL http
   8 @Browser verifyCurrentURL `|ExpectedURL|`
   9 @Browser Close Browser
   10 @Generic End Loop
-  Excel sheet "Login", header row: Username | Password | ExpectedURL (columns must match the |names|). The file must exist on the machine running the Avo client. Not executed (needs the client).
+  Data table Login/DT_Login_Users (Manage Integrations > Test Data Management): columns Username | Password | ExpectedURL, one row standard_user | secret_sauce | https://www.saucedemo.com/inventory.html. Not executed (needs the client).
 - Cart/TC_Cart_001_AddItemToCart: group 1 = reused Login_StandardUser; group 2 Cart_AddBackpackAndVerify:
   btn_AddToCart_Backpack Perform Click | lbl_CartBadge verifyElementText `1` | lnk_ShoppingCart click | lbl_CartItemName verifyElementText `Sauce Labs Backpack` | @Browser verifyCurrentURL https://www.saucedemo.com/cart.html
 
 None of these were run with Debug (needs the Avo client).
+
+## E2E flow
+Purchase/New E2E Flow (rename to E2E_Login_AddToCart): TC_Login_001_ValidLogin, then TC_Cart_001_AddItemToCart. Saved, not run.

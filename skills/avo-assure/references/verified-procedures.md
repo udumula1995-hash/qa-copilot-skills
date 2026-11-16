@@ -59,8 +59,35 @@ Step details: row "..." button -> right pane: Test Step description, Report Anno
 1. Step 1: @Generic Get Param. Input `<file path>;<sheet name>` (e.g. `C:\AvoData\App\Login.xlsx;Login`); optional third part `<row count OR start row-end row>`.
 2. Step 2: @Generic Start Loop. Then the steps that use data, with column names in pipes as input: `|Username|`.
 3. Last: @Generic End Loop. Missing Start/End Loop = "dangling node" error at run time.
-4. After a save, each Input cell shows a small table icon = "Select dataTable from the folder" (pick a Data Table or one of its columns). In this instance the picker was EMPTY: no Data Tables exist and no screen to create them was found (Test Case, Execution, Utilities, landing, user menu). Ask the team admin where Data Tables are created, or use Excel files.
+4. Prefer a Data Table over Excel (see 6e). After the test case is saved, each Input cell shows a small table icon. On the Get Param row it opens a tree (folder > data table): click the table and the input becomes `avoassure/<Folder>/<DataTable>`. On other rows it lists the table's column names; picking one inserts `|Column|` (you can also just type `|Column|`). The icons are hidden while the test case has unsaved changes, and the column list only fills after the Get Param row is saved.
 5. The Excel file path is on the machine running the Avo client; the header row must match the |names|.
+
+## 6e. Data Tables (verified)
+Location: Home > project > **Manage Integrations** > tab **Test Data Management** (route `/integrations/project/<P>/test-data-management`). Other tabs there: Environment management (global variables, environments), Test Management, Defect management, Versioning.
+1. "Create folder" > inline name (default "New Folder") > Ctrl+A, type, Enter. Folder selected: "Create table" > inline name (default "New Datatable") > Enter.
+2. Click the table in the left tree to open the grid (route `.../datatable/<id>`). It starts with columns C1, C2 and one row.
+3. Rename a column: double-click the header > Ctrl+A > type > Enter. Column names are what steps use as `|Name|`.
+4. "+ Add column" (top right) and "+ Add row" (under the grid). Toolbar: add selected row/column, import, export, copy, paste, redo, undo, delete, "Select a column to delete".
+5. Fill a cell: double-click the cell > type > Enter. Tab does NOT carry typing to the next cell; double-click each cell.
+6. Click Save > toast "Data table updated successfully."
+7. Use it: section 6b step 4. Limits per docs: same project as the test case, up to 100 columns.
+Naming: folder per feature, table `DT_<Area>_<Purpose>` (DT_Login_Users).
+
+## 6f. E2E flows (verified)
+1. Test Case tab > E2E Flows panel (bottom-left; click its chevron) > "+" > "Create main folder" > name > Enter (route `/design/project/<P>/e2e-flow/<id>`).
+2. With the folder selected: "+" > "Create E2E flow" > inline name (default "New E2E Flow") > Ctrl+A, type, Enter straight away; if the name does not stick, use the row "..." > Rename.
+3. Open the flow > "Add Test Case" > dialog "Add Test Cases": left tree (project > folders), tick the test cases, click the ">" arrow to move them to "Selected Test Cases", then "Add Test Cases".
+4. The flow lists Name | Location with a drag handle (order = run order) and a trash icon per row; "+" under the list adds more.
+5. Save > toast "E2E Flow saved successfully".
+
+## 6g. Build order for a new automated test (use this every time)
+1. Element repository: folder > repository per page > elements (captured by the user, or Create Manually) > Save > rename to convention > Save.
+2. Data table (if data driven): 6e.
+3. Reusable groups for shared flows (login): build once in a test case > Reuse > library folder; or edit in the library.
+4. Test case: folder > test case > step groups (reused first, then own group) > steps (drag elements from repository, then set Action, then Input) > Save.
+5. Step details (description, expected/pass/fail) where the team wants report text.
+6. E2E flow to chain test cases: 6f.
+7. Tell the user it is ready for Debug. Re-open by deep link and re-read steps before reporting.
 
 ## 6c. Test Case tree "+" menu
 Create main folder / Create sub folder / Creator (Beta) / Create new test case (the last two need a folder selected). Creating anything while the open test case has unsaved changes fails with "there are unsaved testcase data please save it before creating the folder." Save first. Shortcuts with a folder selected: Shift+F folder, Shift+T test case.
