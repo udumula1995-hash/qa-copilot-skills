@@ -1,5 +1,5 @@
 # Not verified in this recon (do not assume)
-- Data Tables: no screen found in the web UI of this version. File based data (Get Param with Excel path) is documented but its UI flow was not exercised.
+- Data Tables: the step-level picker exists (table icon in Input cells) but no Data Table exists and no create screen was found. Where they are created in this instance is unknown; ask the admin. Excel-based Get Param + Start/End Loop was built (TC_Login_002) but not run.
 - Start Loop / End Loop / Get Param behavior at runtime (needs Debug with the client).
 - E2E Flow editor beyond the menus; Execution list creation and running; Reports.
 - Capture Elements and Map Element (need the Avo client and captured elements).
@@ -8,3 +8,5 @@
 - Import/export of test cases and repositories (JSON), Bitbucket integration behavior.
 - Exact behavior of Detach on large groups; permission differences for roles other than Quality Manager.
 - Verified only on v26.10.0; other versions may differ.
+- None of the reference test cases were executed (Debug needs the Avo client).
+- The 'Creator (Beta)' item in the Test Case '+' menu was not opened.

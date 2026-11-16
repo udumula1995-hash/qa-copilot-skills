@@ -18,7 +18,8 @@ drag or typing; it overrides `ui-procedures.md` where they differ) and
 Also: `references/action-syntax.md` (input/output syntax per action),
 `references/rename-workflow.md` (user captures elements, you rename them),
 `references/test-data-management.md` (general QA practice for large repos),
-`references/unverified.md` (what was not verified).
+`references/unverified.md` (what was not verified),
+`references/reference-project.md` (a worked example: reusable login, data-driven and cart tests).
 
 ## Facts that save time (do not rediscover these)
 
