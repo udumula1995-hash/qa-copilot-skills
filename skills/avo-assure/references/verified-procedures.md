@@ -126,4 +126,4 @@ Debug needs the Avo Assure Client and is done by the user. A test case must be s
 | Delete repo prompt "Safe to Delete" | Elements unused | Yes; if it warns they are used, stop and ask |
 
 ## 11. Sign out
-Avatar (top right) > Log Out > dialog "Are you sure you want to logout?" > Yes > lands on /login. Only when the user asks.
+Avatar (top right) > Log Out > dialog "Are you sure you want to logout?" > Yes > returns to the site root (login page). Only when the user asks.
