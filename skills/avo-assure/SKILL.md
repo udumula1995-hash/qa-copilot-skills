@@ -11,7 +11,14 @@ Mindmaps (Test Suite > Test Case > Screen nodes), that is the older UI: say so a
 because the click paths below will not match.
 
 Do not explore the UI to work out how things are done. Every click path you need is in
+`references/verified-procedures.md` (live-verified on v26.10.0; read it before any click,
+drag or typing; it overrides `ui-procedures.md` where they differ) and
 `references/ui-procedures.md`. Read only the section you need.
+
+Also: `references/action-syntax.md` (input/output syntax per action),
+`references/rename-workflow.md` (user captures elements, you rename them),
+`references/test-data-management.md` (general QA practice for large repos),
+`references/unverified.md` (what was not verified).
 
 ## Facts that save time (do not rediscover these)
 
