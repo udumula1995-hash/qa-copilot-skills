@@ -31,3 +31,6 @@ Open an issue or pull request with the Avo Assure version you tested on and what
 ## License
 
 MIT. See `LICENSE`.
+
+## Workflow prompts
+`prompts/workflow-prompts.md` has copy-paste prompts for each stage of the workflow: understand the feature, manual cases, automation selection, Avo design, element rename, data tables, reusable groups, test cases, E2E flows, fixing failures and reporting.
