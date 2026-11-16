@@ -75,7 +75,7 @@ Naming: folder per feature, table `DT_<Area>_<Purpose>` (DT_Login_Users).
 
 ## 6f. E2E flows (verified)
 1. Test Case tab > E2E Flows panel (bottom-left; click its chevron) > "+" > "Create main folder" > name > Enter (route `/design/project/<P>/e2e-flow/<id>`).
-2. With the folder selected: "+" > "Create E2E flow" > inline name (default "New E2E Flow") > Ctrl+A, type, Enter straight away; if the name does not stick, use the row "..." > Rename.
+2. With the folder selected: "+" > "Create E2E flow" > inline name (default "New E2E Flow") > Ctrl+A, type, Enter straight away. If the name does not stick: select the flow, row "..." > Rename > Ctrl+A, type, Enter (verified).
 3. Open the flow > "Add Test Case" > dialog "Add Test Cases": left tree (project > folders), tick the test cases, click the ">" arrow to move them to "Selected Test Cases", then "Add Test Cases".
 4. The flow lists Name | Location with a drag handle (order = run order) and a trash icon per row; "+" under the list adds more.
 5. Save > toast "E2E Flow saved successfully".
@@ -124,3 +124,6 @@ Debug needs the Avo Assure Client and is done by the user. A test case must be s
 | "unsaved testcase data" error | Creating while unsaved | Save, then create |
 | Steps added in wrong order | Drop inserts above (test case) / below (library) | Delete wrong rows, re-drop onto the right target |
 | Delete repo prompt "Safe to Delete" | Elements unused | Yes; if it warns they are used, stop and ask |
+
+## 11. Sign out
+Avatar (top right) > Log Out > dialog "Are you sure you want to logout?" > Yes > lands on /login. Only when the user asks.

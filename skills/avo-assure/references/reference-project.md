@@ -32,4 +32,4 @@ Common/Login_StandardUser: @Browser Open Browser | @Browser Navigate to URL http
 None of these were run with Debug (needs the Avo client).
 
 ## E2E flow
-Purchase/New E2E Flow (rename to E2E_Login_AddToCart): TC_Login_001_ValidLogin, then TC_Cart_001_AddItemToCart. Saved, not run.
+Purchase/E2E_Login_AddToCart: TC_Login_001_ValidLogin, then TC_Cart_001_AddItemToCart. Saved, not run.
